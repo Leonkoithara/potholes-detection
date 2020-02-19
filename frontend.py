@@ -82,6 +82,7 @@ class YOLO(object):
 
         # print a summary of the whole model
         self.model.summary()
+        self.model.save()
 
     def custom_loss(self, y_true, y_pred):
         mask_shape = tf.shape(y_true)[:4]
