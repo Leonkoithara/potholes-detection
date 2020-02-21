@@ -67,6 +67,7 @@ class YOLO(object):
 
         # print a summary of the whole model
         self.model.summary()
+        self.model.save('model.h5')
 
 
     def load_weights(self, weight_path):

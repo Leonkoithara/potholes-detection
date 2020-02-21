@@ -30,17 +30,18 @@ class BoundBox:
             
         return self.score
 
-class WeightReader:
-    def __init__(self, weight_file):
-        self.offset = 4
-        self.all_weights = np.fromfile(weight_file, dtype='float32')
-        
-    def read_bytes(self, size):
-        self.offset = self.offset + size
-        return self.all_weights[self.offset-size:self.offset]
-    
-    def reset(self):
-        self.offset = 4
+#class WeightReader:
+#    def __init__(self, weight_file):
+#        self.offset = 4
+#        self.all_weights = np.fromfile(weight_file, dtype='float32')
+#        
+#    def read_bytes(self, size):
+#        self.offset = self.offset + size
+#        return self.all_weights[self.offset-size:self.offset]
+#    
+#    def reset(self):
+#        self.offset = 4
+
 
 def bbox_iou(box1, box2):
     intersect_w = _interval_overlap([box1.xmin, box1.xmax], [box2.xmin, box2.xmax])
