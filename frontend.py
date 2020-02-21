@@ -5,7 +5,7 @@ import tensorflow as tf
 import numpy as np
 import os
 import cv2
-from utils import decode_netout, compute_overlap, compute_ap
+from utils import decode_netout
 from keras.applications.mobilenet import MobileNet
 from keras.layers.merge import concatenate
 from keras.optimizers import SGD, Adam, RMSprop
